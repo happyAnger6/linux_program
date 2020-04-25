@@ -1,0 +1,19 @@
+#config file
+#configure_file(src_config.h.in target_config.h)
+
+#app lists
+target_include_directories(appname inc_dirs...)
+target_link_libraries(appname libname)
+add_executable(appname src_lists...)
+
+#app by source directory variable
+aux_source_directory(. SRCS)
+add_executable(appname1 ${SRCS))
+
+#lib lists
+add_library(libname lib_srcs...)
+
+
+#c++ variables
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)

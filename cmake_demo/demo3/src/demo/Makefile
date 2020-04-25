@@ -72,14 +72,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxa/sources/linux_program/cmake_demo/demo3/CMakeFiles /home/zhangxa/sources/linux_program/cmake_demo/demo3/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/zhangxa/sources/linux_program/cmake_demo/demo3 && $(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxa/sources/linux_program/cmake_demo/demo3/CMakeFiles /home/zhangxa/sources/linux_program/cmake_demo/demo3/src/demo/CMakeFiles/progress.marks
+	cd /home/zhangxa/sources/linux_program/cmake_demo/demo3 && $(MAKE) -f CMakeFiles/Makefile2 src/demo/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxa/sources/linux_program/cmake_demo/demo3/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/zhangxa/sources/linux_program/cmake_demo/demo3 && $(MAKE) -f CMakeFiles/Makefile2 src/demo/clean
 .PHONY : clean
 
 # The main clean target
@@ -88,57 +88,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/zhangxa/sources/linux_program/cmake_demo/demo3 && $(MAKE) -f CMakeFiles/Makefile2 src/demo/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/zhangxa/sources/linux_program/cmake_demo/demo3 && $(MAKE) -f CMakeFiles/Makefile2 src/demo/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/zhangxa/sources/linux_program/cmake_demo/demo3 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named wrap
+# Convenience name for target.
+src/demo/CMakeFiles/demo.dir/rule:
+	cd /home/zhangxa/sources/linux_program/cmake_demo/demo3 && $(MAKE) -f CMakeFiles/Makefile2 src/demo/CMakeFiles/demo.dir/rule
+.PHONY : src/demo/CMakeFiles/demo.dir/rule
 
-# Build rule for target.
-wrap: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 wrap
-.PHONY : wrap
-
-# fast build rule for target.
-wrap/fast:
-	$(MAKE) -f lib/CMakeFiles/wrap.dir/build.make lib/CMakeFiles/wrap.dir/build
-.PHONY : wrap/fast
-
-#=============================================================================
-# Target rules for targets named demo
-
-# Build rule for target.
-demo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 demo
+# Convenience name for target.
+demo: src/demo/CMakeFiles/demo.dir/rule
 .PHONY : demo
 
 # fast build rule for target.
 demo/fast:
-	$(MAKE) -f src/demo/CMakeFiles/demo.dir/build.make src/demo/CMakeFiles/demo.dir/build
+	cd /home/zhangxa/sources/linux_program/cmake_demo/demo3 && $(MAKE) -f src/demo/CMakeFiles/demo.dir/build.make src/demo/CMakeFiles/demo.dir/build
 .PHONY : demo/fast
 
-#=============================================================================
-# Target rules for targets named gdb_study
+hello.o: hello.c.o
+.PHONY : hello.o
 
-# Build rule for target.
-gdb_study: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gdb_study
-.PHONY : gdb_study
+# target to build an object file
+hello.c.o:
+	cd /home/zhangxa/sources/linux_program/cmake_demo/demo3 && $(MAKE) -f src/demo/CMakeFiles/demo.dir/build.make src/demo/CMakeFiles/demo.dir/hello.c.o
+.PHONY : hello.c.o
 
-# fast build rule for target.
-gdb_study/fast:
-	$(MAKE) -f src/gdb_study/CMakeFiles/gdb_study.dir/build.make src/gdb_study/CMakeFiles/gdb_study.dir/build
-.PHONY : gdb_study/fast
+hello.i: hello.c.i
+.PHONY : hello.i
+
+# target to preprocess a source file
+hello.c.i:
+	cd /home/zhangxa/sources/linux_program/cmake_demo/demo3 && $(MAKE) -f src/demo/CMakeFiles/demo.dir/build.make src/demo/CMakeFiles/demo.dir/hello.c.i
+.PHONY : hello.c.i
+
+hello.s: hello.c.s
+.PHONY : hello.s
+
+# target to generate assembly for a file
+hello.c.s:
+	cd /home/zhangxa/sources/linux_program/cmake_demo/demo3 && $(MAKE) -f src/demo/CMakeFiles/demo.dir/build.make src/demo/CMakeFiles/demo.dir/hello.c.s
+.PHONY : hello.c.s
 
 # Help Target
 help:
@@ -146,11 +145,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... demo"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... wrap"
-	@echo "... demo"
-	@echo "... gdb_study"
+	@echo "... hello.o"
+	@echo "... hello.i"
+	@echo "... hello.s"
 .PHONY : help
 
 
@@ -162,6 +162,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/zhangxa/sources/linux_program/cmake_demo/demo3 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

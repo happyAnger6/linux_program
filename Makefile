@@ -42,10 +42,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zhangxa/sources/linux_program/cmake_demo/demo3
+CMAKE_SOURCE_DIR = /home/zhangxa/sources/linux_program
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zhangxa/sources/linux_program/cmake_demo/demo3
+CMAKE_BINARY_DIR = /home/zhangxa/sources/linux_program
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxa/sources/linux_program/cmake_demo/demo3/CMakeFiles /home/zhangxa/sources/linux_program/cmake_demo/demo3/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxa/sources/linux_program/CMakeFiles /home/zhangxa/sources/linux_program/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxa/sources/linux_program/cmake_demo/demo3/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxa/sources/linux_program/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -102,43 +102,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named wrap
+# Target rules for targets named listTests
 
 # Build rule for target.
-wrap: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 wrap
-.PHONY : wrap
+listTests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 listTests
+.PHONY : listTests
 
 # fast build rule for target.
-wrap/fast:
-	$(MAKE) -f lib/CMakeFiles/wrap.dir/build.make lib/CMakeFiles/wrap.dir/build
-.PHONY : wrap/fast
+listTests/fast:
+	$(MAKE) -f tests/listTests/CMakeFiles/listTests.dir/build.make tests/listTests/CMakeFiles/listTests.dir/build
+.PHONY : listTests/fast
 
 #=============================================================================
-# Target rules for targets named demo
+# Target rules for targets named pipe
 
 # Build rule for target.
-demo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 demo
-.PHONY : demo
+pipe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pipe
+.PHONY : pipe
 
 # fast build rule for target.
-demo/fast:
-	$(MAKE) -f src/demo/CMakeFiles/demo.dir/build.make src/demo/CMakeFiles/demo.dir/build
-.PHONY : demo/fast
-
-#=============================================================================
-# Target rules for targets named gdb_study
-
-# Build rule for target.
-gdb_study: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gdb_study
-.PHONY : gdb_study
-
-# fast build rule for target.
-gdb_study/fast:
-	$(MAKE) -f src/gdb_study/CMakeFiles/gdb_study.dir/build.make src/gdb_study/CMakeFiles/gdb_study.dir/build
-.PHONY : gdb_study/fast
+pipe/fast:
+	$(MAKE) -f src/ipc/pipe/CMakeFiles/pipe.dir/build.make src/ipc/pipe/CMakeFiles/pipe.dir/build
+.PHONY : pipe/fast
 
 # Help Target
 help:
@@ -148,9 +135,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... wrap"
-	@echo "... demo"
-	@echo "... gdb_study"
+	@echo "... listTests"
+	@echo "... pipe"
 .PHONY : help
 
 

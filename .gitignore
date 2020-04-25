@@ -4,3 +4,6 @@ CMakeFiles/
 cmake_install.cmake
 *Cache.txt
 *cmake_install.cmake
+*.a
+*.o
+cmake_install.cmake
